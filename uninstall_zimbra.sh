@@ -6,8 +6,8 @@
 # Pembuat        : [Nama Anda] 
 # Tanggal Dibuat : [Tanggal pembuatan, misalnya: 27 November 2024]
 # Keterangan     : Skrip ini akan menghentikan layanan Zimbra, menghapus
-#                  paket, file konfigurasi, direktori terkait, dan user/group
-#                  Zimbra dari sistem, tanpa menghapus skrip ini setelah selesai.
+#                  paket, file konfigurasi, direktori terkait, user/group,
+#                  serta repository Zimbra dari sistem tanpa menghapus skrip ini setelah selesai.
 ######################################################################
 
 echo "=== Menghentikan semua layanan Zimbra ==="
@@ -21,6 +21,20 @@ elif command -v apt-get >/dev/null 2>&1; then
 else
     echo "Manajer paket tidak terdeteksi! Harap hapus paket Zimbra secara manual."
     exit 1
+fi
+
+echo "=== Menghapus repository Zimbra ==="
+# Menghapus repository Zimbra pada Ubuntu/Debian
+if [ -d /etc/apt/sources.list.d ]; then
+    rm -f /etc/apt/sources.list.d/zimbra.list
+    rm -f /etc/apt/sources.list.d/zimbra.list.save
+    echo "Repository Zimbra untuk Ubuntu/Debian telah dihapus."
+fi
+
+# Menghapus repository Zimbra pada Rocky Linux/CentOS
+if [ -d /etc/yum.repos.d ]; then
+    rm -f /etc/yum.repos.d/zimbra.repo
+    echo "Repository Zimbra untuk Rocky Linux/CentOS telah dihapus."
 fi
 
 echo "=== Menghapus direktori Zimbra ==="
