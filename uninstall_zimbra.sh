@@ -1,7 +1,14 @@
 #!/bin/bash
 
-# Skrip untuk menghapus Zimbra secara bersih dari sistem
-# Tidak akan menghapus dirinya sendiri setelah selesai
+######################################################################
+# Nama Script   : uninstall_zimbra.sh
+# Fungsi         : Menghapus Zimbra secara bersih dari sistem Linux
+# Pembuat        : [Nama Anda] 
+# Tanggal Dibuat : [Tanggal pembuatan, misalnya: 27 November 2024]
+# Keterangan     : Skrip ini akan menghentikan layanan Zimbra, menghapus
+#                  paket, file konfigurasi, direktori terkait, dan user/group
+#                  Zimbra dari sistem, tanpa menghapus skrip ini setelah selesai.
+######################################################################
 
 echo "=== Menghentikan semua layanan Zimbra ==="
 su - zimbra -c "zmcontrol stop" || echo "Layanan Zimbra sudah berhenti atau pengguna 'zimbra' tidak ditemukan."
