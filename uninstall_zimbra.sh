@@ -26,14 +26,13 @@ fi
 echo "=== Menghapus repository Zimbra ==="
 # Menghapus repository Zimbra pada Ubuntu/Debian
 if [ -d /etc/apt/sources.list.d ]; then
-    rm -f /etc/apt/sources.list.d/zimbra.list
-    rm -f /etc/apt/sources.list.d/zimbra.list.save
+    rm -f /etc/apt/sources.list.d/zimbra*.list
     echo "Repository Zimbra untuk Ubuntu/Debian telah dihapus."
 fi
 
 # Menghapus repository Zimbra pada Rocky Linux/CentOS
 if [ -d /etc/yum.repos.d ]; then
-    rm -f /etc/yum.repos.d/zimbra.repo
+    rm -f /etc/yum.repos.d/zimbra*.repo
     echo "Repository Zimbra untuk Rocky Linux/CentOS telah dihapus."
 fi
 
