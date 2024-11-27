@@ -10,3 +10,8 @@ ya udin dibuatin deh scriptnya wakakakkaka
 Gunakan perintah
 
 ``curl -Lso- https://raw.githubusercontent.com/alsyundawy/uninstall-zimbra/refs/heads/main/uninstall_zimbra.sh | bash``
+
+atau 
+
+``wget -qO- https://raw.githubusercontent.com/alsyundawy/uninstall-zimbra/refs/heads/main/uninstall_zimbra.sh | bash``
+
